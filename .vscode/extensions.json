@@ -1,3 +1,7 @@
 {
+  // "editor.formatOnSave": true,
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll.eslint": true
+  // },
 	"recommendations": ["Vue.volar", "Vue.vscode-typescript-vue-plugin"]
 }
