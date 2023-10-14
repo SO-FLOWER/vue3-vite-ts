@@ -40,6 +40,12 @@ module.exports = {
     'block-opening-brace-space-before': 'always', //大括号之前必须有一个空格或不能有空白符
     'value-no-vendor-prefix': null, // 关闭 属性值前缀 --webkit-box
     'property-no-vendor-prefix': null, // 关闭 属性前缀 -webkit-mask
+    'rule-empty-line-before': null,
+    'order/properties-order': null,
+    'alpha-value-notation': null,
+    'color-hex-length': null,
+    'color-function-notation': null,
+    'declaration-empty-line-before': null,
     'selector-pseudo-class-no-unknown': [
       // 不允许未知的选择器
       true,
