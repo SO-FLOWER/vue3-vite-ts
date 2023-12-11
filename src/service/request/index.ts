@@ -53,6 +53,33 @@ class SQRequest {
 		// 	}
 		// )
 	}
+	request<T>(config: SQRequestConfig): Promise<T> {
+		return new Promise((resolve, reject) => {
+			this.instance
+				.request<any, T>(config)
+				.then((res) => {
+					if (config.interceptors?.requestInterceptor) {
+						// res = config.interceptors.requestInterceptor(res)
+						resolve(res)
+					}
+				})
+				.catch((err) => {
+					reject(err)
+				})
+		})
+	}
+	get<T>(config: SQRequestConfig): Promise<T> {
+		return this.request<T>({ ...config, method: 'GET' })
+	}
+	post<T>(config: SQRequestConfig): Promise<T> {
+		return this.request<T>({ ...config, method: 'POST' })
+	}
+	delete<T>(config: SQRequestConfig): Promise<T> {
+		return this.request<T>({ ...config, method: 'DELETE' })
+	}
+	patch<T>(config: SQRequestConfig): Promise<T> {
+		return this.request<T>({ ...config, method: 'PATCH' })
+	}
 }
 
 export default SQRequest
